@@ -6,12 +6,28 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["markdown", "component", "choo", "nanocomponent", "markdown-component", "render"],
+  "keywords": [
+    "markdown",
+    "component",
+    "choo",
+    "nanocomponent",
+    "markdown-component",
+    "render"
+  ],
   "author": "Jake Burden <jake@doge.haus>",
   "license": "MIT",
   "dependencies": {
     "marked": "^0.4.0",
     "nanocomponent": "^6.5.2",
     "nanohtml": "^1.2.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jekrb/markdown-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jekrb/markdown-component/issues"
+  },
+  "homepage": "https://github.com/jekrb/markdown-component#readme"
 }
