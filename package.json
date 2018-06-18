@@ -1,0 +1,17 @@
+{
+  "name": "markdown-component",
+  "version": "1.0.0",
+  "description": "component that offers a textarea as input for markdown formatted text, and a div that outputs the rendered markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["markdown", "component", "choo", "nanocomponent", "markdown-component", "render"],
+  "author": "Jake Burden <jake@doge.haus>",
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^0.4.0",
+    "nanocomponent": "^6.5.2",
+    "nanohtml": "^1.2.4"
+  }
+}
