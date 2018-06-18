@@ -6,6 +6,8 @@
 
 a markdown editing [nanocomponent](https://github.com/choojs/nanocomponent)
 
+![example screenshot](example.png)
+
 ## Usage
 
 ```js
