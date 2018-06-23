@@ -6,7 +6,7 @@
 
 a markdown editing [nanocomponent](https://github.com/choojs/nanocomponent)
 
-![example screenshot](example.png)
+![example screenshot](example.gif)
 
 ## Usage
 
@@ -38,8 +38,9 @@ var component = md.render()
 
 **`md.render`**: `String|Object`
 - `String`: (optional), markdown formatted string 
-- `Object`: (optional), options for setting classes on the rendered elements
+- `Object`: (optional), options for the rendered elements
 
+#### options object
 ```js
 }
   component: {
@@ -50,7 +51,11 @@ var component = md.render()
   },
   div: {
     classes: 'classes for the the output div'
-  }
+  },
+  onDrop: `Function|Boolean` 
+    // Defualt: Adds markdown syntax for an image blob to the text editor, and renders the image in the output.
+    // Implementing your own `onDrop` function will override the default onDrop function.
+    // Setting `onDrop: false` will prevent the text editor from doing anything with file drag and drops.
 }
 ```
 
