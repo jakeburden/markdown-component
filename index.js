@@ -2,6 +2,7 @@ var nanocomponent = require('nanocomponent')
 var html = require('nanohtml')
 var raw = require('nanohtml/raw')
 var marked = require('marked')
+var drop = require('drag-and-drop-files')
 
 function MarkdownComponent () {
   if (!(this instanceof MarkdownComponent)) return new MarkdownComponent()
@@ -21,6 +22,8 @@ MarkdownComponent.prototype.createElement = function (text, opts) {
   if (!opts.textarea) opts.textarea = {}
   if (!opts.div) opts.div = {}
 
+  this.onDrop = opts.onDrop
+
   var placeholder = opts.placeholder || 'gather your thoughts here...'
 
   return html`
@@ -33,6 +36,22 @@ MarkdownComponent.prototype.createElement = function (text, opts) {
 
 MarkdownComponent.prototype.handleChange = function handleChange (e) {
   this.element.querySelector('div').innerHTML = marked(e.target.value)
+}
+
+MarkdownComponent.prototype.load = function load () {
+  if (this.onDrop === false) return
+  drop(this.element, function (files) {
+    if (typeof this.onDrop === 'function') return this.onDrop(files)
+    var mdImd = ''
+    var textarea = this.element.querySelector('textarea')
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i]
+      var url = window.URL.createObjectURL(file)
+      mdImd += `\n![](${url})`
+    }
+    textarea.value += mdImd
+    textarea.dispatchEvent(new Event('input')) 
+  }.bind(this))
 }
 
 module.exports = MarkdownComponent

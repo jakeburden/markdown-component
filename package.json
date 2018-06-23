@@ -17,6 +17,7 @@
   "author": "Jake Burden <jake@doge.haus>",
   "license": "MIT",
   "dependencies": {
+    "drag-and-drop-files": "0.0.1",
     "marked": "^0.4.0",
     "nanocomponent": "^6.5.2",
     "nanohtml": "^1.2.4"
