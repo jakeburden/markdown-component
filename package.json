@@ -1,6 +1,6 @@
 {
   "name": "markdown-component",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "component that offers a textarea as input for markdown formatted text, and a div that outputs the rendered markdown",
   "main": "index.js",
   "scripts": {
